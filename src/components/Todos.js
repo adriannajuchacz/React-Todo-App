@@ -14,7 +14,7 @@ class Todos extends Component {
 
 //Proptypes
 // TODO: research Proptype
-TodoItem.PropTypes = {
+Todos.propTypes = {
   todos: PropTypes.array.isRequired
 }
 export default Todos;
