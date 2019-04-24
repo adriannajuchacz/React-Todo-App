@@ -55,8 +55,8 @@ class App extends Component {
       <div className="App">
         <h1>Todo List:</h1>
         <div className="col">
-          <Todos todos={this.state.todos}/>
-          <Button variant="primary" className="w-100"onClick={this.handleShow}>+</Button>
+          <Todos todos={this.state.todos} showForm={this.handleShow} />
+          <Button variant="primary" className="w-100" onClick={this.handleShow}>+</Button>
         </div>
 
         <Modal show={this.state.show} onHide={this.handleClose}>

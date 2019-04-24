@@ -10,13 +10,7 @@ class TodoItem extends Component {
           <div className="row">
             <div className="col-10 offset-1">
               <div className="row">
-                <div className="col-1 d-flex align-items-center">
-                  <div className="custom-control custom-checkbox">
-                    <input type="checkbox" className="custom-control-input" id={"customCheck" + id}/>
-                    <label className="custom-control-label" for={"customCheck" + id}></label>
-                  </div>
-                </div>
-                <div className="col-4 d-flex align-items-center">
+                <div className="col-5 d-flex align-items-center">
                   <div className="row no-gutters">
                   <p className="m-0">{text}</p>
                   </div>
@@ -28,7 +22,7 @@ class TodoItem extends Component {
                   <p className="m-0">{progress}</p>
                 </div>
                 <div className="col-2 d-flex align-items-center">
-                  <button type="button" className="btn btn-primary mr-1">edit</button>
+                  <button type="button" className="btn btn-primary mr-1" onClick={this.props.showForm.bind(this, id)}>edit</button>
                   <button type="button" className="btn btn-danger">delete</button>
                 </div>
               </div>
