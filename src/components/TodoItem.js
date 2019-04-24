@@ -3,23 +3,37 @@ import PropTypes from 'prop-types';
 
 class TodoItem extends Component {
   render() {
+    const { id, text, deadline, progress } = this.props.todo;
     return (
         <div className="card mb-3">
-          <div className="card-body row">
-            <div className="col-1">
-              <input type="checkbox"/>
-            </div>
-            <div className="col-5">
-              <div className="row no-gutters">
-                <p className="m-0">{this.props.todo.text}</p>
+          <div className="card-body">
+          <div className="row">
+            <div className="col-10 offset-1">
+              <div className="row">
+                <div className="col-1 d-flex align-items-center">
+                  <div className="custom-control custom-checkbox">
+                    <input type="checkbox" className="custom-control-input" id={"customCheck" + id}/>
+                    <label className="custom-control-label" for={"customCheck" + id}></label>
+                  </div>
+                </div>
+                <div className="col-4 d-flex align-items-center">
+                  <div className="row no-gutters">
+                  <p className="m-0">{text}</p>
+                  </div>
+                </div>
+                <div className="col-2 d-flex align-items-center">
+                  <p className="m-0">{deadline}</p>
+                </div>
+                <div className="col-2 d-flex align-items-center">
+                  <p className="m-0">{progress}</p>
+                </div>
+                <div className="col-2 d-flex align-items-center">
+                  <button type="button" className="btn btn-primary mr-1">edit</button>
+                  <button type="button" className="btn btn-danger">delete</button>
+                </div>
               </div>
             </div>
-            <div className="col-2">
-              <p className="m-0">{this.props.todo.deadline}</p>
-            </div>
-            <div className="col-1">
-              <p className="m-0">{this.props.todo.progress}</p>
-            </div>
+          </div>
           </div>
         </div>
     )
