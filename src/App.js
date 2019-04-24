@@ -3,6 +3,8 @@ import Todos from './components/Todos';
 import TodoForm from './components/TodoForm';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
 import './App.css';
 
 class App extends Component {
@@ -53,8 +55,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Todo List:</h1>
-        <div className="col">
+      <Navbar bg="light" expand="lg">
+        <Navbar.Brand>React-Todo-App</Navbar.Brand>
+        <Nav.Link href="#home">Home</Nav.Link>
+        <Nav.Link href="#link">Impressum</Nav.Link>
+      </Navbar>
+        <div className="col mt-5">
           <Todos todos={this.state.todos} showForm={this.handleShow} />
           <Button variant="primary" className="w-100" onClick={this.handleShow}>+</Button>
         </div>
